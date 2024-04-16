@@ -132,76 +132,7 @@
     </nav>
 
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Dashboard</h1>
-        <div class="btn-toolbar mb-2 mb-md-0">
-          <div class="btn-group me-2">
-            <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#addTaskModal">Find User</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="modal" tabindex="-1" id="addTaskModal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Search User</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <!-- Add task modal -->
-            <div class="modal-body">
-              <!-- Set action of form -->
-              <form method="POST" action="add.php">
-                <div class="mb-3">
-                  <label for="addTaskText" class="form-label">Your task</label>
-                  <input type="text" name="task" required class="form-control" id="addTaskText" aria-describedby="emailHelp">
-                  <div id="emailHelp" class="form-text">Text should not be too long.</div>
-                </div>
-                <!-- Form submit button -->
-                <input type="submit" name="send" class="btn btn-primary">
-              </form>
-            </div>
-            <!-- Modal Close button -->
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      <?php 
-
-      foreach($userObj as $user_data) { 
-        
-        ?>
-      <img class="mb-4" src=<?php echo $user_data->avatar; ?>>
-      <h5><?php echo $user_data->username; ?></h5>
-      <div class="table-responsive">
-        <table class="table table-striped table-md">
-          <thead>
-            <tr>
-              <th scope="col">Username</th>
-              <th scope="col">Name</th>
-              <th scope="col">Ranking</th>
-              <th scope="col">Country</th>
-              <th scope="col">School</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><?php echo $user_data->username; ?></td>
-              <td><?php echo $user_data->name; ?></td>
-              <td><?php echo $user_data->ranking; ?></td>
-              <td><?php echo $user_data->country; ?></td>
-              <td><?php echo $user_data->school; ?></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="pb-4 border-bottom"></p>
-
-      <?php } ?>
+      
     </main>
   </div>
 </div>

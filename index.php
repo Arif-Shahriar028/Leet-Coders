@@ -1,7 +1,7 @@
 <?php
 
-require_once './config.php';
-require_once './queries.php';
+require_once './src/config.php';
+require_once './src/queries.php';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=UTF8";
 $pdo = new PDO($dsn, $user, $password);
@@ -12,7 +12,7 @@ $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 $userObj = [];
 // pre-check 1
-function fetchData($username)
+function fetchProfileData($username)
 {
   $api_url = 'https://alfa-leetcode-api.onrender.com/';
   $json_data = file_get_contents($api_url . $username);
@@ -20,16 +20,30 @@ function fetchData($username)
   return $user_data;
 }
 
-foreach ($rows as $row) {
-  $data = fetchData($row['username']);
-  // $userObj = (object) array_merge((array) $userObj, (array) $data);
-  $userObj[] = $data;
+function fetchSolveData($username)
+{
+  $api_url = 'https://alfa-leetcode-api.onrender.com/';
+  $json_data = file_get_contents($api_url . $username . "/solved");
+  $user_data = json_decode($json_data);
+  return $user_data;
 }
 
+foreach ($rows as $row) {
+  $profileData = fetchProfileData($row['username']);
+  // $solveData = fetchSolveData($row['username']);
 
-// echo '<pre>';
-// var_dump($userObj);
-// pre-check 2
+  $userObj[] = $profileData;
+  // $mergedJson = json_encode($mergedArray);
+}
 
+// $mergedArray = array_merge($profileData, $solveData);
 
-include 'user-states.html';
+echo '<pre>';
+var_dump($rows);
+// // pre-check 2
+
+echo '<pre>';
+var_dump($userObj);
+// var_dump($mergedArray);
+
+// include 'views/layout/default.html';
