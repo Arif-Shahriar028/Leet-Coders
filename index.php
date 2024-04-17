@@ -2,6 +2,7 @@
 
 require_once './src/config.php';
 require_once './src/queries.php';
+require_once './src/data.php';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=UTF8";
 $pdo = new PDO($dsn, $user, $password);
@@ -28,22 +29,25 @@ function fetchSolveData($username)
   return $user_data;
 }
 
-foreach ($rows as $row) {
-  $profileData = fetchProfileData($row['username']);
-  // $solveData = fetchSolveData($row['username']);
+// foreach ($rows as $row) {
+//   $profileData = fetchProfileData($row['username']);
+//   $solveData = fetchSolveData($row['username']);
+//   $mergedArray = array_merge((array) $profileData, (array) $solveData);
+//   $userObj[] = $mergedArray;
+//   // 
+// }
+// $profileData = fetchProfileData('Arif_Shahriar');
+// $solveData = fetchSolveData('Arif_Shahriar');
+// $mergedArray = array_merge((array) $profileData, (array) $solveData);
 
-  $userObj[] = $profileData;
-  // $mergedJson = json_encode($mergedArray);
-}
+// 
 
-// $mergedArray = array_merge($profileData, $solveData);
-
-echo '<pre>';
-var_dump($rows);
+// echo '<pre>';
+// var_dump($rows);
 // // pre-check 2
-
-echo '<pre>';
-var_dump($userObj);
+$userObj = $object_variable;
+// echo '<pre>';
+// var_dump($userObj);
 // var_dump($mergedArray);
 
-// include 'views/layout/default.html';
+include 'views/layout/default.html';
