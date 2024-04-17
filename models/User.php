@@ -19,4 +19,21 @@ class User
     $pageData = $statement->fetchAll(PDO::FETCH_ASSOC);
     return $pageData;
   }
+
+  function addUsers($username, $author_username)
+  {
+    echo "Add user";
+    $sql = "INSERT INTO " . $this->tableName . "(username, author_username) VALUES(:username, :author_username)";
+    echo $sql;
+    $statement = $this->connection->prepare($sql);
+    $statement->bindParam(":username", $username, PDO::PARAM_STR);
+    $statement->bindParam(":author_username", $author_username, PDO::PARAM_STR);
+    $val = $statement->execute();
+    if ($val) {
+      header('Location: index.php');
+      exit;
+    } else {
+      echo "failed to add user";
+    }
+  }
 }

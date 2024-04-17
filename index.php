@@ -18,12 +18,11 @@ $dbInstance = DBConnection::getInstance();
 $dbInstance->connect('localhost', 'leetcode_states', 'root', '');
 $connection = $dbInstance->getConnection();
 
-$section = $_GET['page'] ?? "home";
-$action = $_GET['action'] ?? "default";
+$section = $_GET['page'] ?? $_POST['page'] ?? "home";
+$action = $_GET['action'] ?? $_POST['action'] ?? "default";
 
 
 $moduleName = ucfirst($section) . "PageController";
-
 
 if (file_exists(ROOT_PATH . "controllers/" . $moduleName . ".php")) {
 

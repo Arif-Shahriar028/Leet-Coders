@@ -2,25 +2,27 @@
   <div class="row" style="margin-top: 80px;">
     <div class="col-md-12">
       <table class="table">
-        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addTaskModal">Add Coders</button>
-        <div class="modal" tabindex="-1" id="addTaskModal">
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addUserModal">Add Coders</button>
+        <div class="modal" tabindex="-1" id="addUserModal">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title">Add Coders</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-              <!-- Add task modal -->
+              <!-- Add User modal -->
               <div class="modal-body">
                 <!-- Set action of form -->
-                <form method="POST" action="add.php">
+                <form method="POST" action="index.php">
+                  <input type="hidden" name="action" value="addUser">
                   <div class="mb-3">
-                    <label for="addTaskText" class="form-label">Your task</label>
-                    <input type="text" name="task" required class="form-control" id="addTaskText" aria-describedby="emailHelp">
-                    <div id="emailHelp" class="form-text">Text should not be too long.</div>
+                    <label for="addUserName" class="form-label">User name of Leet-coder</label>
+                    <input type="text" name="username" required class="form-control" id="addUserName" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">Input a valid username</div>
                   </div>
                   <!-- Form submit button -->
                   <input type="submit" name="send" class="btn btn-primary">
+                  
                 </form>
               </div>
               <!-- Modal Close button -->

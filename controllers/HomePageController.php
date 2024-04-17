@@ -25,6 +25,16 @@ class HomePageController extends Controller
     $template->view("home", $dataObj);
   }
 
+  function addUserAction()
+  {
+    $username = $_POST['username'];
+    $author_username = $_SESSION['author'];
+    $dbInstance = DBConnection::getInstance();
+    $connection = $dbInstance->getConnection();
+    $userObj = new User($connection);
+    $userObj->addUsers($username, $author_username);
+  }
+
   function getData($users, $api_url)
   {
     $profileDataObj = new ProfileData($api_url);
