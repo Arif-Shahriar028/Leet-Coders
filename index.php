@@ -1,53 +1,33 @@
 <?php
 
-require_once './src/config.php';
-require_once './src/queries.php';
-require_once './src/data.php';
+session_start();
 
-$dsn = "mysql:host=$host;dbname=$db;charset=UTF8";
-$pdo = new PDO($dsn, $user, $password);
+$_SESSION['author'] = "Arif_Shahriar";
 
-$statement = $pdo->query($fetch_all);
-$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+define('ROOT_PATH',  dirname(__FILE__) . DIRECTORY_SEPARATOR);
+define('VIEW_PATH', ROOT_PATH . "views" . DIRECTORY_SEPARATOR);
+
+include "./src/DBConnection.php";
+include "./src/Controller.php";
+include "./src/Api.php";
+include "./src/Template.php";
+include "./models/User.php";
+include "./models/ProfileData.php";
+
+$dbInstance = DBConnection::getInstance();
+$dbInstance->connect('localhost', 'leetcode_states', 'root', '');
+$connection = $dbInstance->getConnection();
+
+$section = $_GET['page'] ?? "home";
+$action = $_GET['action'] ?? "default";
 
 
-$userObj = [];
-// pre-check 1
-function fetchProfileData($username)
-{
-  $api_url = 'https://alfa-leetcode-api.onrender.com/';
-  $json_data = file_get_contents($api_url . $username);
-  $user_data = json_decode($json_data);
-  return $user_data;
+$moduleName = ucfirst($section) . "PageController";
+
+
+if (file_exists(ROOT_PATH . "controllers/" . $moduleName . ".php")) {
+
+  include(ROOT_PATH . "controllers/" . $moduleName . ".php");
+  $controller = new $moduleName($api_url);
+  $controller->runAction($action);
 }
-
-function fetchSolveData($username)
-{
-  $api_url = 'https://alfa-leetcode-api.onrender.com/';
-  $json_data = file_get_contents($api_url . $username . "/solved");
-  $user_data = json_decode($json_data);
-  return $user_data;
-}
-
-// foreach ($rows as $row) {
-//   $profileData = fetchProfileData($row['username']);
-//   $solveData = fetchSolveData($row['username']);
-//   $mergedArray = array_merge((array) $profileData, (array) $solveData);
-//   $userObj[] = $mergedArray;
-//   // 
-// }
-// $profileData = fetchProfileData('Arif_Shahriar');
-// $solveData = fetchSolveData('Arif_Shahriar');
-// $mergedArray = array_merge((array) $profileData, (array) $solveData);
-
-// 
-
-// echo '<pre>';
-// var_dump($rows);
-// // pre-check 2
-$userObj = $object_variable;
-// echo '<pre>';
-// var_dump($userObj);
-// var_dump($mergedArray);
-
-include 'views/layout/default.html';
