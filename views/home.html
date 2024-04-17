@@ -56,16 +56,16 @@
             ?>
             <tr>
               <th scope="row" style="vertical-align: middle;">
-                <img  src = <?php echo $user_data['avatar']; ?> width="50" height="50" style="border-radius: 50%;">
+                <img  src = <?php echo $user_data->avatar; ?> width="50" height="50" style="border-radius: 50%;">
               </th>
-              <td scope="row" style="vertical-align: middle;"><strong><?php echo $user_data['username']; ?></strong></td>
-              <td scope="row" style="vertical-align: middle;"><strong><?php echo $user_data['name']; ?></strong></td>
-              <td scope="row" style="vertical-align: middle; color: blue"><strong><?php echo $user_data['solvedProblem']; ?></strong></td>
-              <td scope="row" style="vertical-align: middle; color: green"><strong><?php echo $user_data['easySolved']; ?></strong></td>
-              <td scope="row" style="vertical-align: middle; color: rgb(255, 118, 27)"><strong><?php echo $user_data['mediumSolved']; ?></strong></td>
-              <td scope="row" style="vertical-align: middle; color: red;"><strong><?php echo $user_data['hardSolved']; ?></strong></td>
-              <td scope="row" style="vertical-align: middle;"><strong><?php echo $user_data['ranking']; ?></strong></td>
-              <td scope="row" style="vertical-align: middle;"><?php echo $user_data['country']; ?></td>
+              <td scope="row" style="vertical-align: middle;"><strong><?php echo $user_data->username; ?></strong></td>
+              <td scope="row" style="vertical-align: middle;"><strong><?php echo $user_data->name; ?></strong></td>
+              <td scope="row" style="vertical-align: middle; color: blue"><strong><?php echo $user_data->solvedProblem; ?></strong></td>
+              <td scope="row" style="vertical-align: middle; color: green"><strong><?php echo $user_data->easySolved; ?></strong></td>
+              <td scope="row" style="vertical-align: middle; color: rgb(255, 118, 27)"><strong><?php echo $user_data->mediumSolved; ?></strong></td>
+              <td scope="row" style="vertical-align: middle; color: red;"><strong><?php echo $user_data->hardSolved; ?></strong></td>
+              <td scope="row" style="vertical-align: middle;"><strong><?php echo $user_data->ranking; ?></strong></td>
+              <td scope="row" style="vertical-align: middle;"><?php echo $user_data->country; ?></td>
               <td style="vertical-align: middle;"> 
                   <a href="" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#editTaskModal<?php echo $row['id']; ?>">View</a>
               </td>
