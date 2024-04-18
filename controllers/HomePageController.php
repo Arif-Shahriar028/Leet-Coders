@@ -12,15 +12,12 @@ class HomePageController extends Controller
 
   function defaultAction()
   {
-    // echo $_SESSION['author'];
     $dbInstance = DBConnection::getInstance();
     $connection = $dbInstance->getConnection();
     $userObj = new User($connection);
     $users = $userObj->getUsers('author_username', $_SESSION['author']);
-    // $dataObj = $this->getData($users, $this->api_url);
+    // $dataObj = $this->getProfileData($users, $this->api_url);
     $dataObj = $this->getDummyData();
-    // echo "<pre>";
-    // var_dump($dataObj);
     $template = new Template("default");
     $template->view("home", $dataObj);
   }
@@ -35,22 +32,13 @@ class HomePageController extends Controller
     $userObj->addUsers($username, $author_username);
   }
 
-  function getData($users, $api_url)
+  function deleteUserAction()
   {
-    $profileDataObj = new ProfileData($api_url);
-    $dataObj = [];
-    foreach ($users as $user) {
-      $profileData = $profileDataObj->fetchData($user['username'], "");
-      $solvedData = $profileDataObj->fetchData($user['username'], "solved");
-      $mergedData = array_merge((array) $profileData, (array) $solvedData);
-      $dataObj[] = $mergedData;
-    }
-    return $dataObj;
-  }
-
-  function getDummyData()
-  {
-    include "./src/data.php";
-    return $object_variable;
+    $username = $_GET['username'];
+    $author_username = $_SESSION['author'];
+    $dbInstance = DBConnection::getInstance();
+    $connection = $dbInstance->getConnection();
+    $userObj = new User($connection);
+    $userObj->deleteUser($username, $author_username);
   }
 }
