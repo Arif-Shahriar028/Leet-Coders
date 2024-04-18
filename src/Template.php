@@ -11,6 +11,8 @@ class Template
 
   function view($template, $userObj)
   {
+    // echo "<pre>";
+    // var_dump($userObj);
     include VIEW_PATH . "layout/" . $this->layout . ".html";
   }
 }

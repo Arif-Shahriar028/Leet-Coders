@@ -12,15 +12,14 @@ class ProfilePageController extends Controller
 
   function defaultAction()
   {
-    echo "profile";
     $users = array();
     $users[] = array('username' => $_GET['username']);
-    $dataObj = $this->getProfileData($users, $this->api_url);
-
+    // $dataObj = $this->getProfileData($users, $this->api_url);
+    $dataObj = $this->getDummyData();
     // echo "<pre>";
-    // var_dump($dataObj);
+    // var_dump($dataObj[0]);
 
     $template = new Template("default");
-    $template->view("profile", $dataObj);
+    $template->view("profile", $dataObj[0]);
   }
 }
