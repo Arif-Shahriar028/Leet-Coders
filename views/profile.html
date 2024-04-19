@@ -1,0 +1,140 @@
+<div class="container">
+  <div class="d-flex align-items-center p-3 my-3 bg-purple rounded shadow-sm">
+    <img class="me-3" src=<?php echo $userObj->avatar;?> alt="" width="100" height="100">
+    <div class="lh-6">
+      <h1 class="h3 mb-0 lh-1"><?php echo $userObj->name;?></h1>
+      <small><?php echo $userObj->username;?></small>
+    </div>
+  </div>
+  
+  <div class="my-3 p-3 bg-body rounded shadow-sm">
+    <h6 class="border-bottom pb-2 mb-0">Profile</h6>
+    <div class="d-flex text-muted pt-3">
+      <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="10" height="50" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"/><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
+  
+      <p class="pb-3 mb-0 large lh-sm border-bottom">
+        <strong class="d-block text-gray-dark">Ranking</strong>
+        <?php echo $userObj->ranking;?>
+      </p>
+    </div>
+    <div class="d-flex text-muted pt-3">
+      <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="10" height="50" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#e83e8c"/><text x="50%" y="50%" fill="#e83e8c" dy=".3em">32x32</text></svg>
+  
+      <p class="pb-3 mb-0 small lh-sm border-bottom">
+        <strong class="d-block text-gray-dark">Reputation</strong>
+        <?php echo $userObj->reputation;?>
+      </p>
+    </div>
+    <div class="d-flex text-muted pt-3">
+      <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="10" height="50" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#6f42c1"/><text x="50%" y="50%" fill="#6f42c1" dy=".3em">32x32</text></svg>
+  
+      <h5 class="pb-3 mb-0 small lh-sm border-bottom">
+        <strong class="d-block text-gray-dark">Company</strong>
+        <?php echo $userObj->company;?>
+      </h5>
+    </div>
+
+    <div class="d-flex text-muted pt-3">
+      <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="10" height="50" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#1f42c9"/><text x="50%" y="50%" fill="#1f42c1" dy=".3em">32x32</text></svg>
+  
+      <h5 class="pb-3 mb-0 small lh-sm border-bottom">
+        <strong class="d-block text-gray-dark">School</strong>
+        <?php echo $userObj->school;?>
+      </h5>
+    </div>
+
+    <div class="d-flex text-muted pt-3">
+      <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="10" height="50" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#3d67a1"/><text x="50%" y="50%" fill="#3d67a1" dy=".3em">32x32</text></svg>
+  
+      <h5 class="pb-3 mb-0 small lh-sm border-bottom">
+        <strong class="d-block text-gray-dark">Country</strong>
+        <?php echo $userObj->country;?>
+      </h5>
+    </div>
+    
+  </div>
+  
+  <div class="my-3 p-3 bg-body rounded shadow-sm">
+    <h6 class="border-bottom pb-2 mb-0">Problem Solved</h6>
+    <div class="d-flex text-muted pt-3">
+      <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"/><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
+  
+      <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+        <div class="d-flex justify-content-between">
+          <strong class="text-gray-dark">Total Solved</strong>
+        </div>
+        <span class="d-block"><?php echo $userObj->solvedProblem;?></span>
+      </div>
+    </div>
+    <div class="d-flex text-muted pt-3">
+      <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#008000"/><text x="50%" y="50%" fill="#008000" dy=".3em">32x32</text></svg>
+  
+      <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+        <div class="d-flex justify-content-between">
+          <strong class="text-gray-dark">Easy Solved</strong>
+        </div>
+        <span class="d-block"><?php echo $userObj->easySolved;?></span>
+      </div>
+    </div>
+    <div class="d-flex text-muted pt-3">
+      <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#FFA500"/><text x="50%" y="50%" fill="#FFA500" dy=".3em">32x32</text></svg>
+  
+      <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+        <div class="d-flex justify-content-between">
+          <strong class="text-gray-dark">Medium Solved</strong>
+        </div>
+        <span class="d-block"><?php echo $userObj->mediumSolved;?></span>
+      </div>
+    </div>
+
+    <div class="d-flex text-muted pt-3">
+      <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#ff0000"/><text x="50%" y="50%" fill="#ff0000" dy=".3em">32x32</text></svg>
+  
+      <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+        <div class="d-flex justify-content-between">
+          <strong class="text-gray-dark">Hard Solved</strong>
+        </div>
+        <span class="d-block"><?php echo $userObj->hardSolved;?></span>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="my-3 p-3 bg-body rounded shadow-sm">
+    <h6 class="border-bottom pb-2 mb-0">Links</h6>
+    <div class="d-flex text-muted pt-3">
+      <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"/><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
+  
+      <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+        <div class="d-flex justify-content-between">
+          <strong class="text-gray-dark">Github</strong>
+          <a href=<?php echo $userObj->gitHub;?>>Follow</a>
+        </div>
+        <span class="d-block"><?php echo $userObj->gitHub;?></span>
+      </div>
+    </div>
+    <div class="d-flex text-muted pt-3">
+      <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"/><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
+  
+      <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+        <div class="d-flex justify-content-between">
+          <strong class="text-gray-dark">Linked In</strong>
+          <a href=<?php echo $userObj->linkedIN;?>>Follow</a>
+        </div>
+        <span class="d-block"><?php echo $userObj->linkedIN;?></span>
+      </div>
+    </div>
+    <div class="d-flex text-muted pt-3">
+      <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"/><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
+  
+      <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+        <div class="d-flex justify-content-between">
+          <strong class="text-gray-dark">Website</strong>
+          <a href=<?php echo $userObj->website;?>>Follow</a>
+        </div>
+        <span class="d-block"><?php echo $userObj->github;?></span>
+      </div>
+    </div>
+  </div>
+  
+</div>
