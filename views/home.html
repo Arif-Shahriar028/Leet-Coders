@@ -96,7 +96,7 @@
                   </div>
                 </div>
               </div>
-              <td style="vertical-align: middle;"><a href="delete.php?id=<?php echo $row['id'] ?>" class="btn btn-warning">Compare</a></td>
+              <td style="vertical-align: middle;"><a href="index.php?page=compare&username=<?php echo $user_data->username ?>" class="btn btn-warning">Compare</a></td>
               <td style="vertical-align: middle;"><a href="index.php?action=deleteUser&username=<?php echo $user_data->username ?>" class="btn btn-danger">delete</a></td>
             </tr>
           <?php } ?>

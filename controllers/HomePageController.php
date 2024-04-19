@@ -14,10 +14,17 @@ class HomePageController extends Controller
   {
     $dbInstance = DBConnection::getInstance();
     $connection = $dbInstance->getConnection();
+
     $userObj = new User($connection);
     $users = $userObj->getUsers('author_username', $_SESSION['author']);
-    // $dataObj = $this->getProfileData($users, $this->api_url);
-    $dataObj = $this->getDummyData();
+    $dataObj = $this->getProfileData($users, $this->api_url);
+    // $dataObj = $this->getDummyData();
+
+    if (is_array($dataObj)) {
+      $json = json_encode($dataObj);
+      $dataObj = json_decode($json);
+    }
+
     $template = new Template("default");
     $template->view("home", $dataObj);
   }

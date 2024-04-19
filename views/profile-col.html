@@ -1,0 +1,83 @@
+<!--profile image-->
+<div class="container d-flex justify-content-center align-items-center my-5">
+  <img src=<?php echo $user->avatar;?>  class="rounded-circle" alt="Profile Pic" width="250" height="250">
+</div>
+
+<!--profile name-->
+<div class="container d-flex justify-content-center align-items-center my-2">
+  <h2 class="profile-name"><?php echo $user->name;?></h2>
+</div>
+
+<!--department-->
+<div class="container d-flex justify-content-center align-items-center my-2">
+  <h5 class="my-1"><?php echo $user->username;?></h3>
+</div>
+
+
+<div class="container align-items-center my-4">
+
+
+  <!--row 1-->
+  <div class="row">
+      <div class="card align-items-center shadow-lg" style="width: 50rem;">
+          <div class="card-body text-center">
+              <h4>Ranking</h5>
+                <hr>
+              <h6><?php echo $user->ranking;?></h6>
+          </div>
+      </div>
+  </div>
+
+  <div class="row">
+    <div class="card align-items-center shadow-lg" style="width: 50rem;">
+        <div class="card-body text-center">
+            <h4>Reputation</h5>
+              <hr>
+            <h6><?php echo $user->reputation;?></h6>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+  <div class="card align-items-center shadow-lg" style="width: 50rem;">
+      <div class="card-body text-center">
+          <h4>Total Solved</h5>
+            <hr>
+          <h6><?php echo $user->solvedProblem;?></h6>
+      </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="card align-items-center shadow-lg" style="width: 50rem;">
+      <div class="card-body text-center">
+          <h4>Easy Solved</h5>
+            <hr>
+          <h6><?php echo $user->easySolved;?></h6>
+      </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="card align-items-center shadow-lg" style="width: 50rem;">
+      <div class="card-body text-center">
+          <h4>Medium Solved</h5>
+            <hr>
+          <h6><?php echo $user->mediumSolved;?></h6>
+      </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="card align-items-center shadow-lg" style="width: 50rem;">
+      <div class="card-body text-center">
+          <h4>Hard Solved</h5>
+            <hr>
+          <h6><?php echo $user->hardSolved;?></h6>
+      </div>
+  </div>
+</div>
+
+  <!--row 3-->
+  
+</div>
