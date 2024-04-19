@@ -5,7 +5,7 @@ Leet-Coders is a leetcode users' states showing webapp, where an user can create
 ### Features of this app
 
 <p align = "center">
-<img src="static/images/readme/p1.png" data-canonical-       src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="500" height="250" />
+<img src="static/images/readme/p1.png" data-canonical-       src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="850" height="500" />
 
 <p align ="center">
 Home page of the app </p>
@@ -18,7 +18,7 @@ Home page of the app </p>
 - Delete users from the list
 
 <p align = "center">
-<img src="static/images//readme/p2.png" data-canonical-       src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="500" height="250" />
+<img src="static/images//readme/p2.png" data-canonical-       src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="850" height="500" />
   
   <p align ="center">
 Comparisn page </p>
@@ -26,7 +26,7 @@ Comparisn page </p>
 #### In comparisn page, user can compare their profile with other.
 
 <p align = "center">
-<img src="static/images/readme/p3.png" data-canonical-       src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="500" height="250" />
+<img src="static/images/readme/p3.png" data-canonical-       src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="850" height="500" />
   
   <p align ="center">
 User's profile page </p>
